@@ -17,6 +17,17 @@ You need Python >= 3.7, as well as a picker. Current supported pickers are:
 1. `pyinstaller --onefile main.py -p . --add-data './template.svg:.'`
 1. `ln -s ./dist/main ~/bin/inkscape-figures`
 
+## wsl中使用window下的inkscape.exe
+
+在$PATH下创建一个可执行文件`inkscape`
+
+```shell
+#!/bin/bash
+
+inkscape.exe $@ 2>/dev/null
+
+```
+
 ## Installation
 
 You can install it using pip:
