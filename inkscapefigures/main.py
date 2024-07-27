@@ -54,7 +54,7 @@ def latex_template(name, title):
         (
             r"\begin{figure}[ht]",
             r"    \centering",
-            rf"    \incfig{{{name}}}",
+            rf"    \includegraphics{{{name}}}",
             rf"    \caption{{{title}}}",
             rf"    \label{{fig:{name}}}",
             r"\end{figure}",
