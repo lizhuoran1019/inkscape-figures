@@ -1,6 +1,7 @@
 __pycache__
 roots
 *.pyc
-/dist/
+dist/
 /*.egg-info
-/build
+build
+*spec

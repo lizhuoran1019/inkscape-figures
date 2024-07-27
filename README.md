@@ -7,8 +7,15 @@ More information in this [blog post](https://castel.dev/post/lecture-notes-2/).
 
 You need Python >= 3.7, as well as a picker. Current supported pickers are:
 
-* [rofi](https://github.com/davatorium/rofi) on Linux systems
-* [choose](https://github.com/chipsenkbeil/choose) on MacOS
+- [rofi](https://github.com/davatorium/rofi) on Linux systems
+- [choose](https://github.com/chipsenkbeil/choose) on MacOS
+
+## 用pyinstall打包
+
+1. `pip install pyinstall`
+1. `cd inkscapefigures/`
+1. `pyinstaller --onefile main.py -p . --add-data './template.svg:.'`
+1. `ln -s ./dist/main ~/bin/inkscape-figures`
 
 ## Installation
 
@@ -37,6 +44,7 @@ Add the following code to the preamble of your LateX document.
 
 \pdfsuppresswarningpagegroup=1
 ```
+
 This defines a command `\incfig` which can be used to include Inkscape figures.
 By default, `\incfig{figure-name}` make the figure as wide as the page, but it's also possible to change the width by providing an optional argument: `\incfig[0.3]{figure-name}`.
 
@@ -55,11 +63,11 @@ figures/
 
 ## Usage
 
-* Watch for figures: `inkscape-figures watch`.
-* Creating a figure: `inkscape-figures create 'title'`. This uses `~/.config/inkscape-figures/template.svg` as a template.
-* Creating a figure in a specific directory: `inkscape-figures create 'title' path/to/figures/`.
-* Select figure and edit it: `inkscape-figures edit`.
-* Select figure in a specific directory and edit it: `inkscape-figures edit path/to/figures/`.
+- Watch for figures: `inkscape-figures watch`.
+- Creating a figure: `inkscape-figures create 'title'`. This uses `~/.config/inkscape-figures/template.svg` as a template.
+- Creating a figure in a specific directory: `inkscape-figures create 'title' path/to/figures/`.
+- Select figure and edit it: `inkscape-figures edit`.
+- Select figure in a specific directory and edit it: `inkscape-figures edit path/to/figures/`.
 
 ## Vim mappings
 
@@ -82,7 +90,6 @@ This does the following:
 1. Set up a file watcher such that whenever the figure is saved as an svg file by pressing <kbd>Ctrl + S</kbd>, it also gets saved as pdf+LaTeX.
 
 To edit figures, press <kbd>Ctrl+F</kbd> in command mode, and a fuzzy search selection dialog will popup allowing you to select the figure you want to edit.
-
 
 ## Configuration
 

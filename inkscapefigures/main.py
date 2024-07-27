@@ -14,8 +14,7 @@ import click
 import pyperclip
 from appdirs import user_config_dir
 from daemonize import Daemonize
-
-from .picker import pick
+from picker import pick
 
 # 设置剪切板为xclip
 pyperclip.set_clipboard("xclip")
