@@ -193,7 +193,7 @@ def maybe_recompile_figure(filepath):
             "300",
             "--export-pdf",
             pdf_path,
-            "--export-latex",
+            # "--export-latex",
             filepath,
         ]
     else:
@@ -204,7 +204,7 @@ def maybe_recompile_figure(filepath):
             "--export-dpi",
             "300",
             "--export-type=pdf",
-            "--export-latex",
+            # "--export-latex",
             "--export-filename",
             pdf_path,
         ]
